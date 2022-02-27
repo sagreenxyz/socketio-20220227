@@ -9,9 +9,14 @@ app.get('/', (req, res) => { // route handler for home page
     res.sendFile(__dirname + '/index.html');
 });
 
-io.on('connection', (socket) => {
+io.on('connection', (socket) => { // connection handler
     console.log('a user connected');
-    socket.on('disconnect', () => {
+
+    socket.on('chat message', (msg) => { // chat message handler
+        console.log('message: ' + msg);
+    });
+
+    socket.on('disconnect', () => { // disconnect handler
         console.log('user disconnected');
     })
 });
