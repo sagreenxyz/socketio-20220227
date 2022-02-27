@@ -20,5 +20,11 @@
     <form id="form" action="">
       <input id="input" autocomplete="off" /><button>Send</button>
     </form>
+  
+  <!-- Load Socket.io Client -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io(); // exposes io global object and the GET /socket.io/socket.io.js endpoint
+  </script>
   </body>
 </html>
