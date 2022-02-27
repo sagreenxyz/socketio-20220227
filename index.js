@@ -25,6 +25,6 @@ io.on('connection', (socket) => { // connection handler
 });
 
 server.listen(process.env.PORT, () => {
-    console.log(`Listening on port ${process.env.PORT}`);
+    console.log(`Listening on port ${process.env.PORT}:  http://localhost:${process.env.PORT}`);
 });
 
