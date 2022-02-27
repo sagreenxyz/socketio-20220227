@@ -25,6 +25,17 @@
   <script src="/socket.io/socket.io.js"></script>
   <script>
     var socket = io(); // exposes io global object and the GET /socket.io/socket.io.js endpoint
+
+    var form = document.getElementById('form');
+    var input = document.getElementById('input');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); // prevents default submit behavior
+      if(input.value) {
+        socket.emit('chat message', input.value); // emit the input value to the socket
+        input.value = '';
+      }
+    })
   </script>
   </body>
 </html>
