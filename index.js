@@ -14,6 +14,7 @@ io.on('connection', (socket) => { // connection handler
 
     socket.on('chat message', (msg) => { // chat message handler
         console.log('message: ' + msg);
+        io.emit('chat message', msg); // broadcast the message
     });
 
     socket.on('disconnect', () => { // disconnect handler
